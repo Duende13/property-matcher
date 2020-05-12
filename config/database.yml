@@ -3,8 +3,8 @@ development:
   encoding: unicode
   database: property_matcher_development
   pool: 5
-  username: postgres
-  password: Src916440200
+  username: 
+  password: 
   template: template0
   host: localhost
   port: 5432
@@ -14,8 +14,8 @@ test: &test
   encoding: unicode
   database: property_matcher_test
   pool: 5
-  username: postgres
-  password: Src916440200
+  username: 
+  password: 
   template: template0
   host: localhost
   port: 5432
