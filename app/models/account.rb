@@ -5,4 +5,12 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :trackable
 
   has_many :properties
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def company
+    "Real State Testing"
+  end
 end
