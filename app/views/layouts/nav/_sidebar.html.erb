@@ -25,6 +25,12 @@
           Reports
         <%end%>
       </li>
+      <li class="nav-item">
+        <%= link_to edit_registration_path(current_account), class: "nav-link" do %>
+          <i data-feather="settings" class="feather-icons"></i>
+          Account Settings
+        <%end%>
+      </li>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
       <span>Saved reports</span>
