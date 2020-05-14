@@ -10,6 +10,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/public/uploads/*
+/storage/*
 !/log/.keep
 !/tmp/.keep
 
@@ -33,3 +35,8 @@ yarn-debug.log*
 .yarn-integrity
 config/database.yml
 *.yml
+
+# Ignore application configuration
+/config/application.yml
+storage/va/ri/variants/dsh30ujfg44r9ri0iqddbo8hono4/9f44ccdd237afbc85bfaee5695ec2760f59aea70f3684ee5d1abeb21e71de69e
+storage/ds/h3/dsh30ujfg44r9ri0iqddbo8hono4

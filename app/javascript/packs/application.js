@@ -12,3 +12,7 @@ require("@rails/ujs").start()
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+const feather = require("feather-icons");
+document.addEventListener("turbolinks:load", function() {
+    feather.replace();
+});
