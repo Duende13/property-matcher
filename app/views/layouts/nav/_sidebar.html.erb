@@ -3,52 +3,43 @@
     <ul class="nav flex-column">
       <li class="nav-item">
         <%= link_to dashboard_path, class: "nav-link" do %>
-          <i data-feather="home" class="feather-icons"></i>
+          <i data-feather="clipboard" class="feather-icons"></i>
           Dashboard <span class="sr-only">(current)</span>
         <% end %>
       </li>
       <li class="nav-item">
         <%= link_to properties_path, class: "nav-link" do %>
-          <i data-feather="package"  class="feather-icons"></i>
+          <i data-feather="home"  class="feather-icons"></i>
           Properties
         <%end%>
       </li>
       <li class="nav-item">
         <%= link_to properties_path, class: "nav-link" do %>
-          <i data-feather="calendar" class="feather-icons"></i>
+          <i data-feather="eye" class="feather-icons"></i>
           Viewings
         <%end%>
       </li>
       <li class="nav-item">
         <%= link_to properties_path, class: "nav-link" do %>
-          <i data-feather="bar-chart-2" class="feather-icons"></i>
-          Reports
+          <i data-feather="users" class="feather-icons"></i>
+          Contacts
         <%end%>
+      </li>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      <span>Settings</span>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <%= link_to edit_registration_path(current_account), class: "nav-link" do %>
+          <i data-feather="calendar" class="feather-icons"></i>
+          Profile <!-- TODO: Here you are!-->
+        <% end %>
       </li>
       <li class="nav-item">
         <%= link_to edit_registration_path(current_account), class: "nav-link" do %>
           <i data-feather="settings" class="feather-icons"></i>
           Account Settings
-        <%end%>
-      </li>
-
-    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-      <span>Saved reports</span>
-      <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-        <i data-feather="plus-circle" ></i>
-      </a>
-    </h6>
-    <ul class="nav flex-column mb-2">
-      <li class="nav-item">
-        <%= link_to properties_path, class: "nav-link" do %>
-          <i data-feather="clipboard" class="feather-icons"></i>
-          This Month
-        <%end%>
-      </li>
-      <li class="nav-item">
-        <%= link_to properties_path, class: "nav-link" do %>
-          <i data-feather="clipboard" class="feather-icons"></i>
-          Engagement
         <%end%>
       </li>
     </ul>
