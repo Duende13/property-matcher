@@ -1,7 +1,9 @@
 $(function(){
   $("#toggleDetails").on("click", function(){
     var details = $("#prop-details");
-    details.toggle("open");
-
+    details.toggleClass("open");
+    if(details.hasClass("open")){
+      $(this).text("Show less");
+    }
   });
 });

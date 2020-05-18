@@ -31,9 +31,9 @@
     </h6>
     <ul class="nav flex-column mb-2">
       <li class="nav-item">
-        <%= link_to edit_registration_path(current_account), class: "nav-link" do %>
-          <i data-feather="calendar" class="feather-icons"></i>
-          Profile <!-- TODO: Here you are!-->
+        <%= link_to profile_path(current_account), class: "nav-link" do %>
+          <i data-feather="user" class="feather-icons"></i>
+          My Profile
         <% end %>
       </li>
       <li class="nav-item">
