@@ -52,3 +52,6 @@ gem 'mini_magick'
 
 gem 'aws-sdk-rails'
 gem 'figaro'
+
+# Font awesome gem
+gem "font-awesome-rails"

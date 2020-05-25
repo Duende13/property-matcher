@@ -5,31 +5,32 @@
 
 <div class="container">
   <div class="row mt-5">
-    <div class="col-sm-8">
+    <div class="col-md-8">
       <div class="row">
-        <div class="col-sm-6">
-          <p class="mb-0"> <%= @property.address %> </p>
-          <p class="h2">
+        <div class="col-lg-5">
+          <p class="h4 mb-0"> <%= @property.for_sale? ? "For Sale" : "For Rent" %> </p>
+            <p class="mb-2"> <%= @property.address %> </p>
+          <p class="h2 mb-3">
             <% if @property.for_sale? %>
-              <%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "For Sale" %>
+              <%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "Offers Accepted" %>
               <% else %>
-                <%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "For Rent" %> / month
+                <%= @property.price > 0 ? number_to_currency(@property.price, precision: 0)+"/ month" : "Open for enquiries" %>
             <% end %>
           </p>
         </div>
-        <div class="col-md-6 text-center">
-          <div class="row mr-md-3 mt-sm-3 bg-light p-3">
+        <div class="col-lg-7 text-center">
+          <div class="row mt-sm-3 bg-light p-3">
             <div class="col-4">
-              <p class="m-0"><strong>Rooms</strong></p>
-              <span class="lead"><i class="fa fa-bed"></i> <%= @property.rooms %></span>
+              <i class="fa fa-bed text-muted m-0"></i><br />
+              <small><%= @property.rooms %> Bedrooms </small>
             </div>
             <div class="col-4">
-              <p class="m-0"><strong>Bathrooms</strong></p>
-              <span class="lead"><i class="fas fa-bath"></i> <%= @property.bathrooms %></span>
+              <i class="fa fa-bath text-muted m-0"></i><br />
+              <small><%= @property.bathrooms %> Bathrooms</small>
             </div>
             <div class="col-4">
-              <p class="m-0"><strong>Parking</strong></p>
-              <span class="lead"><i class="fa fa-car"></i> <%= @property.parking_spaces %></span>
+              <i class="fa fa-car text-muted m-0"></i><br />
+              <small><%= @property.parking_spaces %> Parking</small>
             </div>
           </div>
         </div>
@@ -57,17 +58,25 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-md-4 pt-4 pb-4">
       <%= render "properties/agent_details" %>
+      <iframe class="pt-4 pb-4 ml-lg-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85095.78919011868!2d16.2787511130022!3d48.20192726229387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079e5136ca9f%3A0xfdc2e58a51a25b46!2sVienna!5e0!3m2!1sen!2sat!4v1590393267574!5m2!1sen!2sat<%= @property.address.to_param %>"
+        width="320" height="240" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
   </div>
 </div>
 
-
-  <section id="latest-properties" class="mt-5">
-    <div class="container">
-      <div class="row">
-        <%= render "properties/list", properties: @agent_properties %>
+<!-- list of other properties by the same agent -->
+<section id="latest-properties" class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="h3 mb-3">Other properties by this agent</p>
       </div>
+      <%= render "properties/list", properties: @agent_properties %>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Form to contact agent -->
+<%= render "properties/contact_form_modal" %>
